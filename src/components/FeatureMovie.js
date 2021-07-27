@@ -10,7 +10,7 @@ const FeatureMovie = ({item}) => {
   }
 
   return(
-    <section className="feaured" style={{
+    <section className="featured" style={{
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundImage: `url(https://image.tmdb.org./t/p/original${item.backdrop_path})`
@@ -25,7 +25,8 @@ const FeatureMovie = ({item}) => {
           </div>
           <div className="featured--description">{item.overview}</div>
           <div className="featured--buttons">
-
+            <a href={`/watch/${item.id}`} className="featured--watchbutton"> ▶ Assistir</a>
+            <a href={`/list/add/${item.id}`} className="featured--mylistbutton">+ Minha Lista</a>
           </div>
           <div className="featured--genres"><strong>Gêneros:</strong> {genres.join(', ')}</div>
         </div>
